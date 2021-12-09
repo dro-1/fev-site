@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root,
+body,
+html {
+  font-family: Poppins;
+  font-size: 10px;
+}
+
+button,
+input,
+textarea {
+  font-family: Poppins;
+}
+
+nav {
+  position: relative;
+  overflow: hidden;
+}
+
+nav .mobile-nav {
+  padding: 2rem;
+  background: #222a2e;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+nav .mobile-nav.active {
+  left: 0%;
+  opacity: 1;
+}
+
+nav .mobile-nav button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  border: none;
+  background: transparent;
+}
+
+nav .mobile-nav button img {
+  width: 20px;
+}
+
+nav .mobile-nav > img {
+  width: 30%;
+  display: block;
+  margin: 4rem auto 10rem;
+}
+
+nav .mobile-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+  height: 150px;
+}
+
+nav .mobile-nav ul li {
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+header {
+  padding: 1rem;
+  background: #090b0c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main {
+  position: relative;
+}
+
+button.hamburger {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+}
+
+button.hamburger img {
+  width: 35px;
+}
+
+div.hero {
+  min-height: 100vh;
+  background: #090b0c;
+  padding: 2rem 1rem;
+}
+
+div.hero .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 0;
+}
+
+div.hero .logo img {
+  display: inline-block;
+  width: 3rem;
+  margin-right: 1.5rem;
+}
+
+div.hero .logo p {
+  display: inline;
+  font-size: 2rem;
+  color: #e7b33d;
+  position: relative;
+  top: 5px;
+}
+
+div.hero h2 {
+  color: #e7b33d;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+}
+
+div.hero > img {
+  width: 80%;
+  display: block;
+  margin: 3rem auto;
+}
+
+div.hero h1 {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  line-height: 35px;
+  letter-spacing: 1px;
+}
+
+div.hero h1 span {
+  color: #e7b33d;
+}
+
+div.hero div.buttons {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+}
+
+div.hero div.buttons button {
+  font-size: 1.5rem;
+  border: solid 1px grey;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+div.hero div.buttons button:first-child {
+  color: #090b0c;
+  background: #fff;
+}
+
+div.hero div.buttons button:last-child {
+  color: #fff;
+  background: #090b0c;
+}
+/*# sourceMappingURL=styles.css.map */

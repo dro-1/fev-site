@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root,
+body,
+html {
+  font-family: Poppins;
+  font-size: 10px;
+}
+
+button,
+input,
+textarea {
+  font-family: Poppins;
+}
+
+nav {
+  position: relative;
+  overflow: hidden;
+  .mobile-nav {
+    padding: 2rem;
+    background: #222a2e;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    &.active {
+      left: 0%;
+      opacity: 1;
+    }
+
+    button {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      border: none;
+      background: transparent;
+      img {
+        width: 20px;
+      }
+    }
+    & > img {
+      width: 30%;
+      display: block;
+      margin: 4rem auto 10rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      list-style-type: none;
+      height: 150px;
+      li {
+        text-align: center;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+header {
+  padding: 1rem;
+  background: #090b0c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  position: relative;
+}
+
+button.hamburger {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  img {
+    width: 35px;
+  }
+}
+
+div.hero {
+  min-height: 100vh;
+  background: #090b0c;
+  padding: 2rem 1rem;
+  .logo {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    img {
+      display: inline-block;
+      width: 3rem;
+      margin-right: 1.5rem;
+    }
+    p {
+      display: inline;
+      font-size: 2rem;
+      color: #e7b33d;
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  h2 {
+    color: #e7b33d;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  & > img {
+    width: 80%;
+    display: block;
+    margin: 3rem auto;
+  }
+
+  h1 {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    line-height: 35px;
+    letter-spacing: 1px;
+    span {
+      color: #e7b33d;
+    }
+  }
+
+  div.buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    button {
+      font-size: 1.5rem;
+      border: solid 1px grey;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      &:first-child {
+        color: #090b0c;
+        background: #fff;
+      }
+      &:last-child {
+        color: #fff;
+        background: #090b0c;
+      }
+    }
+  }
+}
