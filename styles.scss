@@ -67,37 +67,29 @@ nav {
   }
 }
 
-header {
-  padding: 1rem;
-  background: #090b0c;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 main {
   position: relative;
 }
 
-button.hamburger {
+header {
+  padding: 1rem 1.5rem;
+  opacity: 0;
+  width: 100%;
+  // background: #1f2325;
+  background-color: #090b0c;
   position: fixed;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background: transparent;
-  img {
-    width: 35px;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-in-out;
+  &.active {
+    opacity: 1;
   }
-}
-
-div.hero {
-  min-height: 100vh;
-  background: #090b0c;
-  padding: 2rem 1rem;
   .logo {
     display: flex;
     align-items: center;
-    margin: 2rem 0;
+    margin: 0;
     img {
       display: inline-block;
       width: 3rem;
@@ -105,11 +97,46 @@ div.hero {
     }
     p {
       display: inline;
-      font-size: 2rem;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: #e7b33d;
       position: relative;
       top: 5px;
     }
+  }
+  button.hamburger {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    border-radius: 5px;
+    background-color: #e7b33d;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 25px;
+    }
+  }
+}
+
+main {
+  position: relative;
+}
+
+div.hero {
+  min-height: 100vh;
+  background: #090b0c;
+  padding: 4rem 2rem 0;
+
+  h1 {
+    font-family: Corinthia;
+    color: #e7b33d;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 2rem;
   }
 
   h2 {
@@ -118,22 +145,27 @@ div.hero {
     text-transform: uppercase;
     font-weight: 500;
     text-align: center;
+    display: none;
   }
 
   & > img {
     width: 80%;
     display: block;
-    margin: 3rem auto;
+    // padding-top: 8rem;
+    margin: 4rem auto 4rem;
   }
 
-  h1 {
+  h3 {
     color: #fff;
     text-transform: capitalize;
     font-size: 2.5rem;
     line-height: 35px;
     letter-spacing: 1px;
+    text-align: center;
     span {
-      color: #e7b33d;
+      &.gold {
+        color: #e7b33d;
+      }
     }
   }
 
@@ -143,6 +175,7 @@ div.hero {
     justify-content: space-between;
     align-items: center;
     width: 250px;
+    display: none;
     button {
       font-size: 1.5rem;
       border: solid 1px grey;
@@ -155,6 +188,75 @@ div.hero {
       &:last-child {
         color: #fff;
         background: #090b0c;
+      }
+    }
+  }
+}
+
+section.about {
+  padding: 4rem 2rem 4rem;
+  h2 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  button {
+    color: #e7b33d;
+    background: rgba(231, 179, 61, 0.15);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1.8rem;
+  }
+}
+
+section.services {
+  padding: 4rem 2rem 4rem;
+  h2 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+
+  .slick-arrow::before {
+    color: #090b0c;
+    font-size: 2rem;
+  }
+  div.carousel {
+    width: 80vw;
+    margin: 0 auto;
+    div.slide {
+      background-color: #090b0c;
+      height: 400px;
+      img {
+        width: 90%;
+        height: 80%;
+        display: block;
+        margin-left: auto;
+      }
+      div.text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3rem 1rem;
+        margin-top: 2rem;
+        h3 {
+          text-transform: uppercase;
+          font-size: 2rem;
+          font-family: Cabin;
+          color: #fff;
+          width: 50%;
+          font-weight: 600;
+        }
+        a {
+          text-decoration: none;
+          font-size: 1.8rem;
+          color: #e7b33d;
+        }
       }
     }
   }

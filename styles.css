@@ -82,64 +82,97 @@ nav .mobile-nav ul li {
   font-weight: 600;
 }
 
+main {
+  position: relative;
+}
+
 header {
-  padding: 1rem;
-  background: #090b0c;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 1rem 1.5rem;
+  opacity: 0;
+  width: 100%;
+  background-color: #090b0c;
+  position: fixed;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
-main {
-  position: relative;
+header.active {
+  opacity: 1;
 }
 
-button.hamburger {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background: transparent;
-}
-
-button.hamburger img {
-  width: 35px;
-}
-
-div.hero {
-  min-height: 100vh;
-  background: #090b0c;
-  padding: 2rem 1rem;
-}
-
-div.hero .logo {
+header .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2rem 0;
+  margin: 0;
 }
 
-div.hero .logo img {
+header .logo img {
   display: inline-block;
   width: 3rem;
   margin-right: 1.5rem;
 }
 
-div.hero .logo p {
+header .logo p {
   display: inline;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #e7b33d;
   position: relative;
   top: 5px;
+}
+
+header button.hamburger {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  background-color: #e7b33d;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header button.hamburger img {
+  width: 25px;
+}
+
+main {
+  position: relative;
+}
+
+div.hero {
+  min-height: 100vh;
+  background: #090b0c;
+  padding: 4rem 2rem 0;
+}
+
+div.hero h1 {
+  font-family: Corinthia;
+  color: #e7b33d;
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 div.hero h2 {
@@ -148,23 +181,25 @@ div.hero h2 {
   text-transform: uppercase;
   font-weight: 500;
   text-align: center;
+  display: none;
 }
 
 div.hero > img {
   width: 80%;
   display: block;
-  margin: 3rem auto;
+  margin: 4rem auto 4rem;
 }
 
-div.hero h1 {
+div.hero h3 {
   color: #fff;
   text-transform: capitalize;
   font-size: 2.5rem;
   line-height: 35px;
   letter-spacing: 1px;
+  text-align: center;
 }
 
-div.hero h1 span {
+div.hero h3 span.gold {
   color: #e7b33d;
 }
 
@@ -180,6 +215,7 @@ div.hero div.buttons {
       -ms-flex-align: center;
           align-items: center;
   width: 250px;
+  display: none;
 }
 
 div.hero div.buttons button {
@@ -197,5 +233,90 @@ div.hero div.buttons button:first-child {
 div.hero div.buttons button:last-child {
   color: #fff;
   background: #090b0c;
+}
+
+section.about {
+  padding: 4rem 2rem 4rem;
+}
+
+section.about h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+section.about p {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+section.about button {
+  color: #e7b33d;
+  background: rgba(231, 179, 61, 0.15);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.8rem;
+}
+
+section.services {
+  padding: 4rem 2rem 4rem;
+}
+
+section.services h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+section.services .slick-arrow::before {
+  color: #090b0c;
+  font-size: 2rem;
+}
+
+section.services div.carousel {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+section.services div.carousel div.slide {
+  background-color: #090b0c;
+  height: 400px;
+}
+
+section.services div.carousel div.slide img {
+  width: 90%;
+  height: 80%;
+  display: block;
+  margin-left: auto;
+}
+
+section.services div.carousel div.slide div.text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3rem 1rem;
+  margin-top: 2rem;
+}
+
+section.services div.carousel div.slide div.text h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: Cabin;
+  color: #fff;
+  width: 50%;
+  font-weight: 600;
+}
+
+section.services div.carousel div.slide div.text a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #e7b33d;
 }
 /*# sourceMappingURL=styles.css.map */
