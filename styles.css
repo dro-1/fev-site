@@ -32,7 +32,7 @@ nav .mobile-nav {
   transition: all 0.5s ease-in-out;
   opacity: 0;
   position: fixed;
-  top: -200px;
+  top: -450px;
   left: 0;
 }
 
@@ -59,20 +59,60 @@ nav .mobile-nav ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   list-style-type: none;
-  height: 150px;
 }
 
 nav .mobile-nav ul li {
   text-align: left;
+  margin: 1.5rem 0;
+}
+
+nav .mobile-nav ul li a {
   color: #fff;
   font-size: 1.8rem;
+  text-decoration: none;
+}
+
+nav .mobile-nav ul li img {
+  width: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: 1px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+nav .mobile-nav ul li img.open {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+nav .services {
+  max-height: 0;
+  padding-left: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+nav .services.open {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+
+nav .services a {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  display: block;
 }
 
 main {
   position: relative;
 }
 
-header {
+body > main > header {
   padding: 1rem 1.5rem;
   opacity: 0;
   width: 100%;
@@ -90,12 +130,12 @@ header {
   transition: opacity 0.3s ease-in-out;
 }
 
-header.active {
+body > main > header.active {
   opacity: 1;
   z-index: 1;
 }
 
-header .logo {
+body > main > header a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,15 +143,16 @@ header .logo {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
+  text-decoration: none;
 }
 
-header .logo img {
+body > main > header a img {
   display: inline-block;
   width: 3rem;
   margin-right: 1rem;
 }
 
-header .logo p {
+body > main > header a p {
   display: inline;
   font-size: 1.6rem;
   font-weight: 700;
@@ -120,7 +161,7 @@ header .logo p {
   top: 5px;
 }
 
-header button.hamburger {
+body > main > header button.hamburger {
   position: fixed;
   top: 18px;
   right: 15px;
@@ -142,11 +183,11 @@ header button.hamburger {
   height: 30px;
 }
 
-header button.hamburger img {
+body > main > header button.hamburger img {
   width: 22px;
 }
 
-header button.hamburger img.small {
+body > main > header button.hamburger img.small {
   width: 15px;
 }
 
@@ -160,9 +201,8 @@ div.hero {
 }
 
 div.hero h1 {
-  font-family: Corinthia;
   color: #e7b33d;
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: center;
   margin-top: 1rem;
 }
@@ -242,13 +282,14 @@ section.about p {
   margin-bottom: 2rem;
 }
 
-section.about button {
+section.about a {
   color: #e7b33d;
   background: rgba(231, 179, 61, 0.15);
   border-radius: 5px;
   padding: 0.5rem 1rem;
   border: none;
   font-size: 1.8rem;
+  text-decoration: none;
 }
 
 section.services {
@@ -374,6 +415,7 @@ footer div.company ul li {
 
 footer div.company ul li a {
   text-decoration: underline;
+  color: #fff;
 }
 
 footer div.contact {
@@ -416,8 +458,262 @@ footer div.contact ul li:nth-child(5) p, footer div.contact ul li:nth-child(6) p
 }
 
 @media screen and (min-width: 335px) {
-  header .logo p {
+  > header .logo p {
     font-size: 1.8rem;
   }
+}
+
+section.about {
+  padding: 2rem;
+}
+
+section.about h1 {
+  color: #e7b33d;
+  font-size: 3rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+section.about h2 {
+  color: #090b0c;
+  text-transform: capitalize;
+  font-size: 3rem;
+}
+
+section.about img {
+  display: block;
+  width: 80%;
+  margin: 2rem auto;
+  border-radius: 5px;
+}
+
+section.about p {
+  font-size: 1.4rem;
+}
+
+section.what {
+  background-color: rgba(196, 196, 196, 0.2);
+  padding: 2rem;
+}
+
+section.what h2 {
+  color: #e7b33d;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+section.what img {
+  display: block;
+  width: 80%;
+  margin: 2rem auto;
+  border-radius: 5px;
+}
+
+section.what p {
+  font-size: 1.4rem;
+}
+
+section.mission {
+  padding: 2rem;
+}
+
+section.mission h2 {
+  color: #e7b33d;
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+section.mission > img {
+  display: block;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+section.mission p {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+section.mission div.socials {
+  width: 200px;
+  margin: 2rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.mission div.socials a img {
+  width: 32px;
+  height: 32px;
+}
+
+section.contact {
+  padding: 2rem;
+}
+
+section.contact h1 {
+  color: #e7b33d;
+  font-size: 3rem;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+section.contact div.contacts a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
+}
+
+section.contact div.contacts a:nth-child(1) {
+  background: #e7b33d;
+  border-radius: 5px;
+  color: #fff;
+}
+
+section.contact div.contacts a:nth-child(2) {
+  background: #e7b33d;
+  border-radius: 5px;
+  color: #fff;
+}
+
+section.contact div.contacts a:nth-child(3) {
+  border: 2px solid #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+section.contact div.contacts a:nth-child(4) {
+  border: 2px solid #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+section.contact div.contacts a img {
+  width: 25px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+section.contact div.contacts a p {
+  display: inline;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+form {
+  padding: 2rem;
+  padding-bottom: 6rem;
+}
+
+form header {
+  color: #e7b33d;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+form textarea {
+  resize: none;
+  display: block;
+  margin: 2rem 0;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: solid 1px #090b0c;
+  padding: 0.5rem 1rem;
+}
+
+form label {
+  margin: 2rem 0;
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+form label input {
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: solid 1px #090b0c;
+  padding: 0.5rem 1rem;
+}
+
+form button {
+  width: 150px;
+  background: #e7b33d;
+  border-radius: 2px;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+section.service {
+  padding: 2rem;
+}
+
+section.service div.top h1 {
+  color: #e7b33d;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-bottom: 3rem;
+  border-bottom: solid 1px #090b0c;
+}
+
+section.service div.top div img {
+  display: block;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+section.service > img {
+  width: 100%;
+  height: 200px;
+  margin: 2rem auto;
+  display: block;
+}
+
+section.service > p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+section.service > h3 {
+  font-size: 1.8rem;
+}
+
+section.service > h3 span {
+  color: #e7b33d;
+}
+
+section.service > a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  background: #e7b33d;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
 }
 /*# sourceMappingURL=styles.css.map */

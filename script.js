@@ -5,9 +5,18 @@ const header = document.querySelector("header");
 
 const serviceLink = document.querySelector(".mobile-nav ul li:nth-child(1) a");
 
+const servicesDiv = document.querySelector(
+  ".mobile-nav ul li:nth-child(1) div.services"
+);
+
+const serviceLinkImg = document.querySelector(
+  ".mobile-nav ul li:nth-child(1) a img"
+);
+
 const serviceDiv = document.querySelector("section.services");
 
 let isMenuOpen = false;
+let isServicesOpen = false;
 
 const switchNav = (type) => {
   if (type === "open") {
@@ -42,11 +51,15 @@ window.addEventListener("scroll", () => {
 
 serviceLink.addEventListener("click", (e) => {
   e.preventDefault();
-  window.scrollTo({
-    top: serviceDiv.offsetTop - 40,
-    behavior: "smooth",
-  });
-  switchNav("close");
+  if (isServicesOpen) {
+    serviceLinkImg.classList.remove("open");
+    servicesDiv.classList.remove("open");
+    isServicesOpen = false;
+  } else {
+    serviceLinkImg.classList.add("open");
+    servicesDiv.classList.add("open");
+    isServicesOpen = true;
+  }
 });
 
 $(document).ready(function () {
