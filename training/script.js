@@ -2,9 +2,6 @@ const hamburgerBtn = document.querySelector(".hamburger");
 const closeBtn = document.querySelector(".close");
 const mobileNav = document.querySelector(".mobile-nav");
 const header = document.querySelector("header");
-const serviceBtn = document.querySelector(
-  "div.hero .container .wrapper .buttons button"
-);
 
 const mobileServiceLink = document.querySelector(
   ".mobile-nav ul li:nth-child(1) a"
@@ -59,7 +56,7 @@ hamburgerBtn.addEventListener("click", (e) => {
 });
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY >= 152) {
+  if (window.scrollY > 0) {
     header.classList.add("active");
   } else {
     header.classList.remove("active");
@@ -91,39 +88,4 @@ desktopServiceLink.addEventListener("click", (e) => {
     desktopServicesDiv.classList.add("open");
     isDesktopServicesOpen = true;
   }
-});
-
-serviceBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  serviceDiv.scrollIntoView();
-});
-
-$(document).ready(function () {
-  $(".carousel").slick({
-    dots: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 1,
-    dots: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: true,
-        },
-      },
-    ],
-  });
 });

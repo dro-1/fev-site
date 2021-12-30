@@ -18,26 +18,28 @@
       <header>
         <a href="/"
           ><img
-            src="../assets/svg/logo.svg"
+            src="./../assets/svg/logo.svg"
             alt="Famous Empire Venture's Logo"
           />
 
           <p>Famous Empire Ventures</p>
         </a>
         <button class="hamburger">
-          <img src="../assets/svg/menu.svg" alt="Menu" />
+          <img src="./../assets/svg/menu.svg" alt="Menu" />
         </button>
       </header>
       <nav>
         <div class="mobile-nav">
           <ul>
             <li>
-              <a>Services <img src="../assets/svg/down-arrow.svg" alt="" /></a>
+              <a
+                >Services <img src="./../assets/svg/down-arrow.svg" alt=""
+              /></a>
               <div class="services">
                 <a href="/training">Training</a>
                 <a href="/printers">Printers & Repairs</a>
                 <a href="/laptops">Laptops & Repairs</a>
-                <a href="/dekstops">Desktops & Repairs</a>
+                <a href="/desktops">Desktops & Repairs</a>
                 <a href="/inverters">Inverter Installation</a>
                 <a href="/tv">Flat Screen TVs</a>
                 <a href="/phones">Phones & Repairs</a>
@@ -53,23 +55,65 @@
             </li>
           </ul>
         </div>
-        <div class="desktop-nav"></div>
+        <div class="desktop-nav">
+          <div class="logo">
+            <a href="/"
+              ><img
+                src="./../assets/svg/logo.svg"
+                alt="Famous Empire Venture's Logo"
+              />
+
+              <p>Famous Empire Ventures</p>
+            </a>
+          </div>
+          <ul>
+            <li>
+              <a
+                >Services <img src="./../assets/svg/down-arrow.svg" alt=""
+              /></a>
+              <div class="services">
+                <a href="/training">Training</a>
+                <a href="/printers">Printers & Repairs</a>
+                <a href="/laptops">Laptops & Repairs</a>
+                <a href="/desktops">Desktops & Repairs</a>
+                <a href="/inverters">Inverter Installation</a>
+                <a href="/tv">Flat Screen TVs</a>
+                <a href="/phones">Phones & Repairs</a>
+                <a href="/accessories">Computer Accessories</a>
+                <a href="/consultancy">IT Consultancy</a>
+              </div>
+            </li>
+            <li>
+              <a href="/about">About Us</a>
+            </li>
+            <li>
+              <a href="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </main>
     <section class="service">
       <div class="top">
+        <div class="separator"></div>
         <h1>Training</h1>
         <div>
           <img src="./../assets/img/company-icons.png" alt="training" />
         </div>
       </div>
+
       <img src="./../assets/img/training.png" alt="" />
-      <p>
-        Equipping people with the skills to solve problems relating to tech and
-        for performing information technology jobs.
-      </p>
-      <h3>See what we have in store for <span>you.</span></h3>
-      <a href="/contact">Contact Us</a>
+
+      <div class="bottom">
+        <p>
+          Equipping people with the skills to solve problems relating to tech
+          and for performing information technology jobs.
+        </p>
+        <div class="contact">
+          <h3>See what we have in store for <span>you.</span></h3>
+          <a href="/contact">Contact Us</a>
+        </div>
+      </div>
     </section>
 
     <footer>
@@ -89,6 +133,21 @@
         <ul>
           <li><a href="/about">About Us</a></li>
           <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="services">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/training">Training</a></li>
+          <li><a href="/printers">Printers & Repairs</a></li>
+          <li><a href="/laptops">Laptops & Repairs</a></li>
+          <li><a href="/desktops">Desktops & Repairs</a></li>
+          <li><a href="/inverters">Inverter Installation</a></li>
+          <li><a href="/tv">Flat Screen TVs</a></li>
+          <li><a href="/phones">Phones & Repairs</a></li>
+          <li><a href="/accessories">Computer Accessories</a></li>
+          <li><a href="/consultancy">IT Consultancy</a></li>
         </ul>
       </div>
 
@@ -124,6 +183,6 @@
         </ul>
       </div>
     </footer>
-    <script src="./../script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
