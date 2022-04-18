@@ -109,7 +109,7 @@
           <img src="./../assets/svg/instagram.svg" alt="" />
           <p>visit our instagram</p>
         </a>
-        <a>
+        <a href="https://web.facebook.com/FamousEmpireVentures/">
           <img src="./../assets/svg/facebook.svg" alt="" />
           <p>visit our facebook</p>
         </a>
@@ -117,16 +117,25 @@
     </section>
     <form>
       <header>send in your requests</header>
-      <textarea rows="6" placeholder="What can we help you with?"></textarea>
-      <label for="phone">
-        Phone No*
-        <input id="phone" type="text" />
+      <label for="message">
+        Message*
+        <textarea
+          id="message"
+          rows="6"
+          placeholder="What can we help you with?"
+        ></textarea>
+      </label>
+
+      <label for="name">
+        Name*
+        <input id="name" type="text" />
       </label>
       <label for="email">
         E-Mail*
         <input id="email" type="email" />
       </label>
       <button>Send</button>
+      <p class="feedback"></p>
     </form>
     <footer>
       <div class="title">
@@ -195,6 +204,15 @@
         </ul>
       </div>
     </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("TGdtAv9JF-4Clli2c");
+      })();
+    </script>
     <script src="./../script.js"></script>
   </body>
 </html>

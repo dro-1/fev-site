@@ -93,37 +93,129 @@ desktopServiceLink.addEventListener("click", (e) => {
   }
 });
 
-serviceBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  serviceDiv.scrollIntoView();
-});
-
-$(document).ready(function () {
-  $(".carousel").slick({
-    dots: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 1,
-    dots: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: true,
-        },
-      },
-    ],
+if (serviceBtn) {
+  serviceBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    serviceDiv.scrollIntoView();
   });
+}
+
+if (!window.location.pathname.includes("contact")) {
+  $(document).ready(function () {
+    $(".carousel").slick({
+      dots: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      initialSlide: 1,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            initialSlide: 1,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 1,
+            dots: true,
+          },
+        },
+      ],
+    });
+  });
+}
+
+//Handling the contact form
+
+const messageBox = document.querySelector("textarea");
+const mailInput = document.querySelector("input#email");
+const nameInput = document.querySelector("input#name");
+const feedbackText = document.querySelector("p.feedback");
+
+const loaderSVG = `
+<svg
+version="1.1"
+id="loader-1"
+xmlns="http://www.w3.org/2000/svg"
+x="0px"
+y="0px"
+width="25px"
+height="25px"
+viewBox="0 0 50 50"
+style={{ enableBackground: "new 0 0 50 50" }}
+>
+<path
+  fill="#fff"
+  d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+>
+  <animateTransform
+    attributeType="xml"
+    attributeName="transform"
+    type="rotate"
+    from="0 25 25"
+    to="360 25 25"
+    dur="0.6s"
+    repeatCount="indefinite"
+  />
+</path>
+</svg>
+`;
+
+const formBtn = document.querySelector("form > button");
+
+let isFormLoading = null;
+
+const setFeedbackMessage = (message, className) => {
+  feedbackText.innerHTML = message;
+  setTimeout(() => {
+    feedbackText.innerHTML = "";
+  }, 5000);
+  feedbackText.classList.add(className);
+};
+
+formBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  if (!messageBox.value || !mailInput.value || !nameInput.value) {
+    setFeedbackMessage(
+      "All the fields above are required to send the message.",
+      "failed"
+    );
+    return;
+  }
+
+  const templateParams = {
+    name: nameInput.value,
+    email: mailInput.value,
+    message: messageBox.value,
+  };
+
+  isFormLoading = true;
+  formBtn.innerHTML = loaderSVG;
+  formBtn.disabled = isFormLoading;
+
+  emailjs.send("service_esd8jgb", "template_la85l5p", templateParams).then(
+    function (response) {
+      // console.log(response);
+      // console.log("SUCCESS!", response.status, response.text);
+      setFeedbackMessage("Your message was sent successfully.", "success");
+      isFormLoading = false;
+      formBtn.innerHTML = "Send";
+      formBtn.disabled = isFormLoading;
+    },
+    function (error) {
+      // console.log("FAILED...", error);
+      setFeedbackMessage("Something went wrong. Please try again.", "failed");
+      isFormLoading = false;
+      formBtn.innerHTML = "Send";
+      formBtn.disabled = isFormLoading;
+    }
+  );
 });
